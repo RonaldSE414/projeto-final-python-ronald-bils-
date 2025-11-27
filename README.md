@@ -71,24 +71,6 @@ Bd = {
 }
 
 
-Não há persistência em arquivo. Os dados existem apenas enquanto o programa está rodando.
-
-🖥 Como executar
-
-Certifique-se de ter o Python 3 instalado.
-
-Salve o código em um arquivo, por exemplo:
-
-sistema_alunos.py
-
-
-Execute no terminal/cmd:
-
-python sistema_alunos.py
-
-
-Use o menu numérico para navegar entre as opções.
-
 🔧 Tecnologias Utilizadas
 
 Python 3
