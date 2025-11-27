@@ -125,7 +125,7 @@ def relatorio():
 
 def menu():
     while True:
-        print("\n1-Cadastrar\n2-Atualizar\n3-Deletar\n4-Listar\n5-Buscar\n6-Sair\n7-Relatório")
+        print("\n1-Cadastrar\n2-Atualizar\n3-Deletar\n4-Listar\n5-Buscar\n6-Relatório\n7-Sair")
         opcao = input("Opção: ")
 
         if opcao == "1":
@@ -139,11 +139,12 @@ def menu():
         elif opcao == "5":
             buscar_aluno()
         elif opcao == "6":
+            relatorio()
+        elif opcao == "7":
             print("Saindo...")
             break
-        elif opcao == "7":
-            relatorio()
         else:
             print("Inválida.")
 
 menu()
+
