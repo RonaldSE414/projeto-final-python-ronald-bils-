@@ -25,7 +25,9 @@ def cadastrar_aluno():
         except ValueError:
             print("Digite um número válido.")
 
-    Bd[matricula] = {"nome": nome, "nota": nota}
+    status = "Aprovado" if nota >= 7 else "Reprovado"
+
+    Bd[matricula] = {"nome": nome, "nota": nota, "status": status}
     print("Aluno cadastrado!")
 
 def atualizar_aluno():
@@ -52,6 +54,7 @@ def atualizar_aluno():
             nova_nota = float(nova_nota)
             if 0 <= nova_nota <= 10:
                 aluno["nota"] = nova_nota
+                aluno["status"] = "Aprovado" if nova_nota >= 7 else "Reprovado"
             else:
                 print("Nota fora do intervalo. Mantida.")
         except ValueError:
@@ -80,7 +83,7 @@ def listar_alunos():
         return
 
     for mat, dados in Bd.items():
-        print(f"{mat} | {dados['nome']} | {dados['nota']}")
+        print(f"{mat} | {dados['nome']} | Nota: {dados['nota']} | {dados['status']}")
 
 def buscar_aluno():
     print("\n=== Buscar ===")
@@ -92,7 +95,7 @@ def buscar_aluno():
 
     if matricula in Bd:
         dados = Bd[matricula]
-        print(f"{dados['nome']} | Nota: {dados['nota']}")
+        print(f"{dados['nome']} | Nota: {dados['nota']} | {dados['status']}")
     else:
         print("Não encontrado.")
 
